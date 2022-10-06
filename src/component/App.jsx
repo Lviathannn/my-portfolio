@@ -32,12 +32,12 @@ export default function App() {
       setTimeout(() => {
          setLoading(false);
       }, 5000);
-   });
+   }, []);
    return loading ? (
       <div className="h-screen bg-slate-800 flex justify-center items-center">
          <HashLoader
             loading={loading}
-            size={100}
+            size={50}
             color="#6366f1"
             aria-label="Loading Spinner"
          />
