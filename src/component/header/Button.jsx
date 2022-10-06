@@ -7,7 +7,7 @@ export default function Button() {
          className="dark-icon lg:fixed absolute right-10 top-4 text-2xl text-indigo-500 z-[120]"
          id="dark-mode"
       >
-         <MoonStars id="dark-icon"></MoonStars>
+         <MoonStars></MoonStars>
       </button>
    );
 }
