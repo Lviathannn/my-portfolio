@@ -20,7 +20,7 @@ export default function MySwiper() {
             modules={[Pagination, Navigation]}
             className="mySwiper"
          >
-            <SwiperSlide>
+            <SwiperSlide className="mb-14">
                {" "}
                <div className="swiper-slide flex justify-center items-center mb-14">
                   <div className="shadow-md w-3/4 lg:w-1/2 rounded-xl overflow-hidden dark:bg-slate-700">
@@ -34,9 +34,9 @@ export default function MySwiper() {
                            Muhammad Asrul Portfolio
                         </h1>
                         <p className="mt-2 text-slate-500 text-sm md:text-base dark:text-slate-300">
-                           This is my first Portfolio website, using TailwindCSS
-                           as the CSS Framework and using some additional
-                           libraries such as Swiper JS and ScrollReveal JS
+                           This is my first Portfolio website,made using
+                           TailwindCSS, React JS and some additional libraries
+                           such as Swiper JS and ScrollReveal JS
                         </p>
                         <h2 className="text-slate-600 mt-5 font-medium md:text-lg dark:text-slate-50">
                            Tools :

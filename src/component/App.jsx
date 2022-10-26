@@ -5,16 +5,15 @@ import { React, useEffect, useState } from "react";
 import HashLoader from "react-spinners/HashLoader";
 
 export default function App() {
-   const [loading, setLoading] = useState(false);
+   const [loading, setLoading] = useState(true);
    useEffect(() => {
-      setLoading(true);
       setTimeout(() => {
          setLoading(false);
       }, 5000);
    }, []);
 
    return loading ? (
-      <div className="h-screen bg-slate-800 flex justify-center items-center">
+      <div className="h-screen bg-white dark:bg-slate-800 flex justify-center items-center">
          <HashLoader
             loading={loading}
             size={50}

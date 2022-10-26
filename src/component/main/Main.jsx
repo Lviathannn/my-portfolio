@@ -11,19 +11,22 @@ export default function Main() {
       const sr = ScrollReveal({
          origin: "top",
          distance: "60px",
-         duration: 2500,
+         duration: 1500,
          delay: 150,
          reset: true,
       });
       sr.reveal(`
-         .about__image, .skill__caption, .skill__tools, .skill__card, .contact__caption ,.footer__bio, .footer__info ,.footer__adress, .footer__copy
+      .about__image, .skill__caption, .skill__tools, .skill__card, .contact__caption ,.footer__bio, .footer__info ,.footer__adress
       `);
       sr.reveal(`.home__image, .portfolio__caption, .contact__form`, {
          origin: `right`,
       });
-      sr.reveal(`.home__caption, .portfolio__card, .contact__info`, {
-         origin: `left`,
-      });
+      sr.reveal(
+         `.home__caption, .portfolio__card, .contact__info , .footer__copy`,
+         {
+            origin: `left`,
+         }
+      );
       sr.reveal(".about__caption", { origin: "bottom" });
    }, []);
 
