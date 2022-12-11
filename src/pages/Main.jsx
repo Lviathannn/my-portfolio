@@ -6,9 +6,11 @@ import Portfolio from "../components/Portfolio";
 import Contact from "../components/Contact";
 import ScrollReveal from "scrollreveal";
 import { CaretRightFill } from "react-bootstrap-icons";
+import { useThemeContext } from "../context/ThemeContext";
 
 export default function Main() {
    const [activeTheme, setActiveTheme] = useState(false);
+   const { setColor } = useThemeContext();
 
    useEffect(() => {
       const sr = ScrollReveal({
@@ -32,6 +34,7 @@ export default function Main() {
       );
       sr.reveal(".about__caption", { origin: "bottom" });
    }, []);
+
    return (
       <main className="overflow-x-hidden dark:bg-slate-800 bg-slate-50 dark:text-slate-50">
          <Home />
@@ -53,12 +56,42 @@ export default function Main() {
                   Theme
                </h1>
                <div className={`flex gap-2 flex-wrap justify-center `}>
-                  <button className="w-6 h-6 bg-indigo-500 rounded-full"></button>
-                  <button className="w-6 h-6 bg-blue-500 rounded-full"></button>
-                  <button className="w-6 h-6 bg-red-500 rounded-full"></button>
-                  <button className="w-6 h-6 bg-green-500 rounded-full"></button>
-                  <button className="w-6 h-6 bg-cyan-500 rounded-full"></button>
-                  <button className="w-6 h-6 bg-rose-500 rounded-full"></button>
+                  <button
+                     className="w-6 h-6 bg-indigo-500 rounded-full"
+                     onClick={() => {
+                        setColor("indigo");
+                     }}
+                  ></button>
+                  <button
+                     className="w-6 h-6 bg-blue-500 rounded-full"
+                     onClick={() => {
+                        setColor("blue");
+                     }}
+                  ></button>
+                  <button
+                     className="w-6 h-6 bg-red-500 rounded-full"
+                     onClick={() => {
+                        setColor("red");
+                     }}
+                  ></button>
+                  <button
+                     className="w-6 h-6 bg-green-500 rounded-full"
+                     onClick={() => {
+                        setColor("green");
+                     }}
+                  ></button>
+                  <button
+                     className="w-6 h-6 bg-cyan-500 rounded-full"
+                     onClick={() => {
+                        setColor("cyan");
+                     }}
+                  ></button>
+                  <button
+                     className="w-6 h-6 bg-rose-500 rounded-full"
+                     onClick={() => {
+                        setColor("rose");
+                     }}
+                  ></button>
                </div>
                <div className={`flex justify-center`}>
                   <a href="https://github.com/Lviathannn" target="_blank">

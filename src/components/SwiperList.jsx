@@ -6,8 +6,11 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { BoxArrowInUpRight } from "react-bootstrap-icons";
 import { Link } from "react-scroll";
+import { useThemeContext } from "../context/ThemeContext";
 
 export default function SwiperList({ data }) {
+   const { color } = useThemeContext();
+
    return (
       <Swiper
          slidesPerView={1}
@@ -32,7 +35,9 @@ export default function SwiperList({ data }) {
                            alt={item.title}
                         />
                         <div className="mt-5 px-6 pb-5">
-                           <h1 className="text-slate-700 text-lg font-semibold md:text-xl dark:text-indigo-500">
+                           <h1
+                              className={`text-slate-700 text-lg font-semibold md:text-xl dark:text-${color}-500`}
+                           >
                               {item.title}
                            </h1>
                            <p className="mt-2 text-slate-500 text-sm md:text-base dark:text-slate-300">
@@ -62,7 +67,7 @@ export default function SwiperList({ data }) {
                                     offset={50}
                                     duration={500}
                                     rel="noreferrer"
-                                    className="flex justify-center items-center gap-1 px-4 py-1 rounded-md  bg-indigo-500 text-slate-50 hover:bg-indigo-700"
+                                    className={`flex justify-center items-center gap-1 px-4 py-1 rounded-md  bg-${color}-500 text-slate-50 hover:bg-${color}-700`}
                                  >
                                     <BoxArrowInUpRight className="text-sm" />
                                     {"  "}
@@ -71,7 +76,7 @@ export default function SwiperList({ data }) {
                               ) : (
                                  <a
                                     href={item.link}
-                                    className="flex justify-center items-center gap-1 px-4 py-1 rounded-md  bg-indigo-500 text-slate-50 hover:bg-indigo-700"
+                                    className={`flex justify-center items-center gap-1 px-4 py-1 rounded-md  bg-${color}-500 text-slate-50 hover:bg-${color}-700`}
                                  >
                                     <BoxArrowInUpRight className="text-sm" />
                                     {"  "}
