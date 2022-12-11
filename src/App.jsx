@@ -1,11 +1,12 @@
-import Header from "./header/Header";
-import Footer from "./footer/Footer";
-import Main from "./main/Main";
 import { React, useEffect, useState } from "react";
 import HashLoader from "react-spinners/HashLoader";
+import Header from "./pages/Header";
+import Main from "./pages/Main";
+import Footer from "./pages/Footer";
 
 export default function App() {
    const [loading, setLoading] = useState(true);
+
    useEffect(() => {
       setTimeout(() => {
          setLoading(false);
@@ -13,7 +14,7 @@ export default function App() {
    }, []);
 
    return loading ? (
-      <div className="h-screen bg-white dark:bg-slate-800 flex justify-center items-center">
+      <div className="h-screen bg-slate-50 dark:bg-slate-800 flex justify-center items-center">
          <HashLoader
             loading={loading}
             size={50}

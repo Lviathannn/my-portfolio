@@ -1,5 +1,6 @@
 import React from "react";
-import MySwiper from "./MySwiper";
+import { portfolioData } from "../data/dummy";
+import SwiperList from "./SwiperList";
 
 export default function Portfolio() {
    return (
@@ -9,7 +10,7 @@ export default function Portfolio() {
          </h1>
          <div className="portfolio__card swiper mySwiper mt-10">
             <div className="swiper-wrapper">
-               <MySwiper />
+               <SwiperList data={portfolioData} />
             </div>
          </div>
       </section>
