@@ -14,24 +14,7 @@ export default function About() {
             </div>
             <div className="about__caption text-slate-700  mt-10 text-center md:text-left">
                <h1 className="font-bold text-4xl lg:text-5xl dark:text-slate-50">
-                  About{" "}
-                  <span
-                     className={
-                        color == "indigo"
-                           ? "text-indigo-500"
-                           : color == "blue"
-                           ? "text-blue-500"
-                           : color == "red"
-                           ? "text-red-500"
-                           : color == "cyan"
-                           ? "text-cyan-500"
-                           : color == "green"
-                           ? "text-green-500"
-                           : "text-rose-500"
-                     }
-                  >
-                     Me
-                  </span>
+                  About <span className={`text-${color}-500`}>Me</span>
                </h1>
                <p className="text- text-slate-500 w-96 mt-5 dark:text-slate-50">
                   My name is Muhammad Asrul Rifa Anwar , and I have a passion in

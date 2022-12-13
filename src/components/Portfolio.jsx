@@ -9,24 +9,7 @@ export default function Portfolio() {
    return (
       <section className="mt-20 relative " id="portfolio">
          <h1 className="portfolio__caption font-bold text-4xl lg:text-5xl text-slate-700 text-center dark:text-slate-50">
-            My{" "}
-            <span
-               className={
-                  color == "indigo"
-                     ? "text-indigo-500"
-                     : color == "blue"
-                     ? "text-blue-500"
-                     : color == "red"
-                     ? "text-red-500"
-                     : color == "cyan"
-                     ? "text-cyan-500"
-                     : color == "green"
-                     ? "text-green-500"
-                     : "text-rose-500"
-               }
-            >
-               Portfolio
-            </span>
+            My <span className={`text-${color}-500`}>Portfolio</span>
          </h1>
          <div className="portfolio__card swiper mySwiper mt-10">
             <div className="swiper-wrapper">

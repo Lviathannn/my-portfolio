@@ -19,24 +19,7 @@ export default function Home() {
             </div>
             <div className="home__caption text-slate-700  mt-10 md:mt-0 text-center md:text-left">
                <h1 className="font-bold text-4xl lg:text-6xl dark:text-slate-50">
-                  Hi! I'm{" "}
-                  <span
-                     className={
-                        color == "indigo"
-                           ? "text-indigo-500"
-                           : color == "blue"
-                           ? "text-blue-500"
-                           : color == "red"
-                           ? "text-red-500"
-                           : color == "cyan"
-                           ? "text-cyan-500"
-                           : color == "green"
-                           ? "text-green-500"
-                           : "text-rose-500"
-                     }
-                  >
-                     Asrul
-                  </span>
+                  Hi! I'm <span className={`text-${color}-500`}>Asrul</span>
                </h1>
                <h6 className="text-xl text-slate-600 font-normal mt-1 dark:text-slate-400">
                   Front-End Developer

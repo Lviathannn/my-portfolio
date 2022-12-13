@@ -3,28 +3,11 @@ import { GeoAlt, Envelope, Telephone, Send } from "react-bootstrap-icons";
 import { useThemeContext } from "../context/ThemeContext";
 
 export default function Contact() {
-   const { color } = useThemeContext;
+   const { color } = useThemeContext();
    return (
       <section className=" mt-20 mb-20 relative" id="contact">
          <h1 className="contact__caption font-bold md:text-4xl text-2xl text-center">
-            Contact{" "}
-            <span
-               className={
-                  color == "indigo"
-                     ? "text-indigo-500"
-                     : color == "blue"
-                     ? "text-blue-500"
-                     : color == "red"
-                     ? "text-red-500"
-                     : color == "cyan"
-                     ? "text-cyan-500"
-                     : color == "green"
-                     ? "text-green-500"
-                     : "text-rose-500"
-               }
-            >
-               Me
-            </span>
+            Contact <span className={`text-${color}-500`}>Me</span>
          </h1>
          <div className="flex justify-center lg:flex-row gap-3 lg:gap-10 items-center flex-col mt-10">
             <div className=" contact__info flex flex-col justify-center items-center p-10 py-10 rounded-xl shadow-md w-11/12 sm:w-2/3 lg:w-2/6 lg:px-0 lg:py-10 overflow-hidden dark:bg-slate-700 bg-white">

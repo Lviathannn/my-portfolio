@@ -48,7 +48,7 @@ export default function Main() {
             }`}
          >
             <div
-               className={` bg-white h-60 dark:bg-slate-700/90 rounded-r-xl pt-5 w-20`}
+               className={` bg-white/60 h-60 dark:bg-slate-700/60 backdrop-blur-md rounded-r-xl pt-5 w-20`}
             >
                <h1
                   className={`text-center mb-5 text-slate-600 font-medium dark:text-white`}
@@ -107,7 +107,7 @@ export default function Main() {
             </div>
             <div className="cursor-pointer rounded-r-full self-center">
                <button
-                  className={`w-12 h-12 rounded-r-full bg-white flex justify-center items-center text-2xl text-slate-600 dark:text-white dark:bg-slate-700 `}
+                  className={`w-12 h-12 rounded-r-full bg-white flex justify-center items-center text-2xl text-slate-600 dark:text-white bg-white/60 h-60 dark:bg-slate-700/60 backdrop-blur-md `}
                   onClick={() => setActiveTheme(!activeTheme)}
                >
                   <CaretRightFill

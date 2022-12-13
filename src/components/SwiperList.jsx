@@ -23,6 +23,7 @@ export default function SwiperList({ data }) {
          navigation={true}
          modules={[Pagination, Navigation]}
          className="mySwiper"
+         color={color}
       >
          {data.map((item, index) => {
             return (
@@ -36,7 +37,7 @@ export default function SwiperList({ data }) {
                         />
                         <div className="mt-5 px-6 pb-5">
                            <h1
-                              className={`text-slate-700 text-lg font-semibold md:text-xl dark:text-${color}-500`}
+                              className={`text-${color}-500 text-lg font-semibold md:text-xl`}
                            >
                               {item.title}
                            </h1>
