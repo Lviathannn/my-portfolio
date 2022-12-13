@@ -1,16 +1,31 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Linkedin, Youtube, Github, Instagram } from "react-bootstrap-icons";
 import { Link } from "react-scroll";
 import { useThemeContext } from "../context/ThemeContext";
 export default function Footer() {
    const { color } = useThemeContext();
+   const memoizedColor = useMemo(
+      () =>
+         color == "indigo"
+            ? "text-indigo-500"
+            : color == "blue"
+            ? "text-blue-500"
+            : color == "red"
+            ? "text-red-500"
+            : color == "cyan"
+            ? "text-cyan-500"
+            : color == "emerald"
+            ? "text-emerald-500"
+            : "text-rose-500",
+      [color]
+   );
 
    return (
       <footer className="px-7 pb-36 pt-10 lg:pb-14 dark:bg-slate-800">
          <section className="flex flex-col gap-7 sm:flex-row justify-center sm:justify-evenly md:w-4/5 mx-auto">
             <div className="footer__bio flex flex-col gap-2">
                <h1
-                  className={`text-${color}-500 font-medium md:font-semibold md:text-xl`}
+                  className={`${memoizedColor} font-medium md:font-semibold md:text-xl`}
                >
                   Muhammad Asrul
                </h1>

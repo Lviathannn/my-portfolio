@@ -1,15 +1,48 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Link } from "react-scroll";
 import { Send, ArrowDownCircleFill } from "react-bootstrap-icons";
 import { useThemeContext } from "../context/ThemeContext";
 
 export default function Home() {
    const { color } = useThemeContext();
+
+   const memoizedHoverColor = useMemo(
+      () =>
+         color == "indigo"
+            ? "hover:bg-indigo-600"
+            : color == "blue"
+            ? "hover:bg-blue-600"
+            : color == "red"
+            ? "hover:bg-red-600"
+            : color == "cyan"
+            ? "hover:bg-cyan-600"
+            : color == "emerald"
+            ? "hover:bg-emerald-600"
+            : "hover:bg-rose-600",
+      [color]
+   );
+
+   const memoizedColor = useMemo(
+      () =>
+         color == "indigo"
+            ? "text-indigo-500"
+            : color == "blue"
+            ? "text-blue-500"
+            : color == "red"
+            ? "text-red-500"
+            : color == "cyan"
+            ? "text-cyan-500"
+            : color == "emerald"
+            ? "text-emerald-500"
+            : "text-rose-500",
+      [color]
+   );
+
    return (
       <section className="relative" id="home">
          <div className="h-screen flex flex-col lg:flex-row-reverse justify-center items-center lg:gap-48 md:gap-5 relative z-50">
             <div
-               className={`home__image bg-${color}-500 blob overflow-hidden w-96 h-96 lg:w-[450px] lg:h-[450px] opacity-100`}
+               className={`home__image bg-${color}-500 blob overflow-hidden w-80 h-80 lg:w-[450px] lg:h-[450px] opacity-100`}
             >
                <img
                   src="/img/profile.png"
@@ -19,7 +52,7 @@ export default function Home() {
             </div>
             <div className="home__caption text-slate-700  mt-10 md:mt-0 text-center md:text-left">
                <h1 className="font-bold text-4xl lg:text-6xl dark:text-slate-50">
-                  Hi! I'm <span className={`text-${color}-500`}>Asrul</span>
+                  Hi! I'm <span className={memoizedColor}>Asrul</span>
                </h1>
                <h6 className="text-xl text-slate-600 font-normal mt-1 dark:text-slate-400">
                   Front-End Developer
@@ -32,7 +65,7 @@ export default function Home() {
                   href="mailto:muhammad.asrul.rifa@gmail.com"
                   target="_blank"
                   rel="noreferrer"
-                  className={`bg-${color}-500 py-2 w-40 rounded-xl text-white mx-auto mt-5 md:mx-0 hover:bg-${color}-600 active:bg-${color}-800 text-center cursor-pointer flex justify-center items-center gap-2`}
+                  className={`bg-${color}-500 py-2 w-40 rounded-xl text-white mx-auto mt-5 md:mx-0 ${memoizedHoverColor} text-center cursor-pointer flex justify-center items-center gap-2`}
                >
                   <Send></Send> <p>Contact Me</p>
                </a>

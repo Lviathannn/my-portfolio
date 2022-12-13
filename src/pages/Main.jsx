@@ -75,9 +75,9 @@ export default function Main() {
                      }}
                   ></button>
                   <button
-                     className="w-6 h-6 bg-green-500 rounded-full"
+                     className="w-6 h-6 bg-emerald-500 rounded-full"
                      onClick={() => {
-                        setColor("green");
+                        setColor("emerald");
                      }}
                   ></button>
                   <button

@@ -1,20 +1,37 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { GeoAlt, Envelope, Telephone, Send } from "react-bootstrap-icons";
 import { useThemeContext } from "../context/ThemeContext";
 
 export default function Contact() {
    const { color } = useThemeContext();
+
+   const memoizedColor = useMemo(
+      () =>
+         color == "indigo"
+            ? "text-indigo-500"
+            : color == "blue"
+            ? "text-blue-500"
+            : color == "red"
+            ? "text-red-500"
+            : color == "cyan"
+            ? "text-cyan-500"
+            : color == "emerald"
+            ? "text-emerald-500"
+            : "text-rose-500",
+      [color]
+   );
+
    return (
       <section className=" mt-20 mb-20 relative" id="contact">
          <h1 className="contact__caption font-bold md:text-4xl text-2xl text-center">
-            Contact <span className={`text-${color}-500`}>Me</span>
+            Contact <span className={memoizedColor}>Me</span>
          </h1>
          <div className="flex justify-center lg:flex-row gap-3 lg:gap-10 items-center flex-col mt-10">
             <div className=" contact__info flex flex-col justify-center items-center p-10 py-10 rounded-xl shadow-md w-11/12 sm:w-2/3 lg:w-2/6 lg:px-0 lg:py-10 overflow-hidden dark:bg-slate-700 bg-white">
                <div className="flex flex-col gap-5 justify-center">
                   <div className="flex gap-4">
                      <Telephone
-                        className={`md:text-4xl text-2xl text-${color}-500`}
+                        className={`md:text-4xl text-2xl ${memoizedColor}`}
                      ></Telephone>
                      <div className="flex flex-col">
                         <h1 className="md:text-lg font-medium text-slate-600 dark:text-slate-50 ">
@@ -27,7 +44,7 @@ export default function Contact() {
                   </div>
                   <div className="flex gap-4">
                      <Envelope
-                        className={`md:text-4xl text-2xl text-${color}-500`}
+                        className={`md:text-4xl text-2xl ${memoizedColor}`}
                      ></Envelope>
                      <div className="flex flex-col">
                         <h1 className="md:text-lg font-medium text-slate-600 dark:text-slate-50">
@@ -40,7 +57,7 @@ export default function Contact() {
                   </div>
                   <div className="flex gap-4">
                      <GeoAlt
-                        className={`md:text-4xl text-2xl text-${color}-500`}
+                        className={`md:text-4xl text-2xl ${memoizedColor}`}
                      ></GeoAlt>
                      <div className="flex flex-col">
                         <h1 className="md:text-lg font-medium text-slate-600 dark:text-slate-50">
