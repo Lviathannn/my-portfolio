@@ -23,7 +23,7 @@ export default function Contact() {
 
    return (
       <section className=" mt-20 mb-20 relative" id="contact">
-         <h1 className="contact__caption font-bold md:text-4xl text-2xl text-center">
+         <h1 className="contact__caption font-bold text-4xl lg:text-5xl text-center">
             Contact <span className={memoizedColor}>Me</span>
          </h1>
          <div className="flex justify-center lg:flex-row gap-3 lg:gap-10 items-center flex-col mt-10">

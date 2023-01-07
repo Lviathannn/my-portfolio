@@ -14,7 +14,7 @@ export default function App() {
    }, []);
 
    return loading ? (
-      <div className="h-screen bg-slate-50 dark:bg-slate-800 flex justify-center items-center">
+      <div className="h-screen bg-slate-800 flex justify-center items-center">
          <HashLoader
             loading={loading}
             size={50}

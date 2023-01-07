@@ -1,15 +1,16 @@
 export const frontEndData = [
    { title: "HTML 5", logo: "html.png" },
    { title: "CSS 3", logo: "css-3.png" },
-   { title: "Tailwind CSS", logo: "tailwindcss.png" },
-   { title: "Material UI", logo: "materialui.png" },
+   // { title: "Material UI", logo: "materialui.png" },
    { title: "JavaScript", logo: "js.png" },
-   { title: "TypeScript", logo: "typescript.png" },
+   { title: "Tailwind CSS", logo: "tailwindcss.png" },
+   // { title: "TypeScript", logo: "typescript.png" },
    { title: "React JS", logo: "react.svg" },
    { title: "Redux Toolkit", logo: "redux.svg" },
    { title: "Vite JS", logo: "vite.svg" },
-   { title: "Next JS", logo: "next.svg" },
+   // { title: "Next JS", logo: "next.svg" },
 ];
+
 export const toolsData = [
    { title: "VS Code", logo: "vscode.png" },
    { title: "Figma", logo: "figma.png" },
@@ -18,6 +19,7 @@ export const toolsData = [
    { title: "Netlify", logo: "netlify-icon.svg" },
    { title: "NPM", logo: "npm.png" },
 ];
+
 export const portfolioData = [
    {
       title: "My Portfolio",

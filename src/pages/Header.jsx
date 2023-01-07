@@ -5,7 +5,7 @@ import { useThemeContext } from "../context/ThemeContext";
 
 export default function Header() {
    const { color } = useThemeContext();
-   const [dark, setDark] = useState(false);
+   const [dark, setDark] = useState(true);
 
    const darkToogle = () => {
       setDark(!dark);
