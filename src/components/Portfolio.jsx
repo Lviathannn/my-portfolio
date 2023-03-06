@@ -1,7 +1,8 @@
 import React, { useMemo } from "react";
 import { portfolioData } from "../data/dummy";
-import SwiperList from "./SwiperList";
 import { useThemeContext } from "../context/ThemeContext";
+import PortfolioCard from "./PortfolioCard";
+import Header from "./Header";
 
 export default function Portfolio() {
    const { color } = useThemeContext();
@@ -22,14 +23,23 @@ export default function Portfolio() {
    );
 
    return (
-      <section className="mt-20 relative " id="portfolio">
-         <h1 className="portfolio__caption font-bold text-4xl lg:text-5xl text-slate-700 text-center dark:text-slate-50">
-            My <span className={memoizedColor}>Portfolio</span>
-         </h1>
-         <div className="portfolio__card swiper mySwiper mt-10">
-            <div className="swiper-wrapper">
-               <SwiperList data={portfolioData} />
-            </div>
+      <section
+         className="relative mt-10 min-h-screen p-5 lg:mt-20 lg:px-16"
+         id="portfolio"
+      >
+         <Header title1="My" title2="Portfolio" customClasses="text-center" />
+         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {portfolioData.map((portfolio) => {
+               return (
+                  <PortfolioCard
+                     key={portfolio.title}
+                     title={portfolio.title}
+                     imgUrl={portfolio.Image}
+                     tools={portfolio.tools}
+                     link={portfolio.link}
+                  />
+               );
+            })}
          </div>
       </section>
    );

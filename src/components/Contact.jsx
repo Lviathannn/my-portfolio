@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { GeoAlt, Envelope, Telephone, Send } from "react-bootstrap-icons";
 import { useThemeContext } from "../context/ThemeContext";
+import Header from "./Header";
 
 export default function Contact() {
    const { color } = useThemeContext();
@@ -22,48 +23,46 @@ export default function Contact() {
    );
 
    return (
-      <section className=" mt-20 mb-20 relative" id="contact">
-         <h1 className="contact__caption font-bold text-4xl lg:text-5xl text-center">
-            Contact <span className={memoizedColor}>Me</span>
-         </h1>
-         <div className="flex justify-center lg:flex-row gap-3 lg:gap-10 items-center flex-col mt-10">
-            <div className=" contact__info flex flex-col justify-center items-center p-10 py-10 rounded-xl shadow-md w-11/12 sm:w-2/3 lg:w-2/6 lg:px-0 lg:py-10 overflow-hidden dark:bg-slate-700 bg-white">
-               <div className="flex flex-col gap-5 justify-center">
+      <section className="relative mt-32 mb-20" id="contact">
+         <Header title1="Contact" title2="Me" customClasses="text-center" />
+         <div className="mt-10 flex flex-col items-center justify-center gap-3 lg:flex-row lg:gap-10">
+            <div className=" contact__info flex w-11/12 flex-col items-center justify-center overflow-hidden rounded-xl bg-white p-10 py-10 shadow-md dark:bg-slate-700 sm:w-2/3 lg:w-2/6 lg:px-0 lg:py-10">
+               <div className="flex flex-col justify-center gap-5">
                   <div className="flex gap-4">
                      <Telephone
-                        className={`md:text-4xl text-2xl ${memoizedColor}`}
+                        className={`text-2xl md:text-4xl ${memoizedColor}`}
                      ></Telephone>
                      <div className="flex flex-col">
-                        <h1 className="md:text-lg font-medium text-slate-600 dark:text-slate-50 ">
+                        <h1 className="font-medium text-slate-600 dark:text-slate-50 md:text-lg ">
                            Call Me
                         </h1>
-                        <p className="text-slate-500 text-sm md:text-base dark:text-slate-400">
+                        <p className="text-sm text-slate-500 dark:text-slate-400 md:text-base">
                            +62-858-6525-7441
                         </p>
                      </div>
                   </div>
                   <div className="flex gap-4">
                      <Envelope
-                        className={`md:text-4xl text-2xl ${memoizedColor}`}
+                        className={`text-2xl md:text-4xl ${memoizedColor}`}
                      ></Envelope>
                      <div className="flex flex-col">
-                        <h1 className="md:text-lg font-medium text-slate-600 dark:text-slate-50">
+                        <h1 className="font-medium text-slate-600 dark:text-slate-50 md:text-lg">
                            Email
                         </h1>
-                        <p className="text-slate-500 text-sm md:text-base dark:text-slate-400">
+                        <p className="text-sm text-slate-500 dark:text-slate-400 md:text-base">
                            muhammad.asrul.rifa@gmail.com
                         </p>
                      </div>
                   </div>
                   <div className="flex gap-4">
                      <GeoAlt
-                        className={`md:text-4xl text-2xl ${memoizedColor}`}
+                        className={`text-2xl md:text-4xl ${memoizedColor}`}
                      ></GeoAlt>
                      <div className="flex flex-col">
-                        <h1 className="md:text-lg font-medium text-slate-600 dark:text-slate-50">
+                        <h1 className="font-medium text-slate-600 dark:text-slate-50 md:text-lg">
                            Location
                         </h1>
-                        <p className="text-slate-500 text-sm md:text-base dark:text-slate-400">
+                        <p className="text-sm text-slate-500 dark:text-slate-400 md:text-base">
                            Ciamis - Jawabarat - Indonesia
                         </p>
                      </div>
@@ -74,7 +73,7 @@ export default function Contact() {
             <form
                action="https://formspree.io/f/xoqbjzeo"
                method="POST"
-               className="contact__form flex flex-col md:mt-5 justify-center items-center p-7 py-10 rounded-xl shadow-md mt-10 w-3/4 lg:w-1/3 gap-3 dark:bg-slate-700 bg-white"
+               className="contact__form mt-10 flex w-3/4 flex-col items-center justify-center gap-3 rounded-xl bg-white p-7 py-10 shadow-md dark:bg-slate-700 md:mt-5 lg:w-1/3"
             >
                <div className="w-full">
                   <label className="text-slate-500 dark:text-slate-200 md:text-lg">
@@ -85,7 +84,7 @@ export default function Contact() {
                      id="name"
                      name="name"
                      placeholder="Name"
-                     className={`mt-2 block w-full px-2 py-1 rounded-md focus:ring-2 focus:ring-${color}-500 focus:outline-none text-sm md:text-base bg-slate-100 dark:bg-slate-500`}
+                     className={`mt-2 block w-full rounded-md px-2 py-1 focus:ring-2 focus:ring-${color}-500 bg-slate-100 text-sm focus:outline-none dark:bg-slate-500 md:text-base`}
                      required
                   />
                </div>
@@ -98,7 +97,7 @@ export default function Contact() {
                      id="email"
                      name="email"
                      placeholder="email"
-                     className={`mt-2 block w-full px-2 py-1 rounded-md focus:ring-2 focus:ring-${color}-500 focus:outline-none text-sm md:text-base bg-slate-100 dark:bg-slate-500`}
+                     className={`mt-2 block w-full rounded-md px-2 py-1 focus:ring-2 focus:ring-${color}-500 bg-slate-100 text-sm focus:outline-none dark:bg-slate-500 md:text-base`}
                      required
                   />
                </div>
@@ -110,14 +109,14 @@ export default function Contact() {
                      id="message"
                      name="message"
                      rows="4"
-                     className={`bg-slate-100 dark:bg-slate-500 mt-2 block w-full px-2 py-1 rounded-md focus:ring-2 focus:ring-${color}-500 focus:outline-none text-sm md:text-base resize-none`}
+                     className={`mt-2 block w-full rounded-md bg-slate-100 px-2 py-1 focus:ring-2 dark:bg-slate-500 focus:ring-${color}-500 resize-none text-sm focus:outline-none md:text-base`}
                      placeholder="Your message..."
                      required
                   ></textarea>
                </div>
                <button
                   type="submit"
-                  className={`px-3 py-1 bg-${color}-500 text-slate-50 rounded-md self-start mt-5 flex justify-center items-center gap-1`}
+                  className={`px-3 py-1 bg-${color}-500 mt-5 flex items-center justify-center gap-1 self-start rounded-md text-slate-50`}
                >
                   <p>Send</p> <Send className=" ml-1"></Send>
                </button>

@@ -57,17 +57,17 @@ export default function Nav() {
    );
 
    return screenSize >= 1024 ? (
-      <nav className="h-14 bg-white/50 dark:bg-slate-800/50 backdrop-blur-lg sm:px-28  justify-center fixed top-0 min-w-full flex z-[100]">
+      <nav className="fixed top-0 z-[100] flex h-14  min-w-full justify-center bg-white/50 backdrop-blur-lg dark:bg-slate-800/50 sm:px-28">
          <div className="container my-auto hidden sm:block">
             <h1 className={`text-base font-semibold ${memoizedColor} my-auto`}>
                Muhammad Asrul
             </h1>
          </div>
-         <div className="nav__menu container flex justify-center sm:justify-end my-auto text-slate-500 dark:text-slate-50">
+         <div className="nav__menu container my-auto flex justify-center text-slate-500 dark:text-slate-50 sm:justify-end">
             <Link
-               activeClass={`px-3 cursor-pointer ${memoizedColor}`}
+               activeClass={` ${memoizedColor}`}
                to="home"
-               className={`px-3 cursor-pointer ${memoizedHoverColor}`}
+               className={`cursor-pointer px-3 ${memoizedHoverColor}`}
                spy={true}
                smooth={true}
                offset={50}
@@ -76,9 +76,9 @@ export default function Nav() {
                Home
             </Link>
             <Link
-               activeClass={`px-3 cursor-pointer ${memoizedColor}`}
+               activeClass={` ${memoizedColor}`}
                to="about"
-               className={`px-3 cursor-pointer ${memoizedHoverColor}`}
+               className={`cursor-pointer px-3 ${memoizedHoverColor}`}
                spy={true}
                smooth={true}
                offset={50}
@@ -87,9 +87,9 @@ export default function Nav() {
                About
             </Link>
             <Link
-               activeClass={`px-3 cursor-pointer ${memoizedColor}`}
+               activeClass={` ${memoizedColor}`}
                to="skill"
-               className={`px-3 cursor-pointer ${memoizedHoverColor}`}
+               className={`cursor-pointer px-3 ${memoizedHoverColor}`}
                spy={true}
                smooth={true}
                offset={50}
@@ -98,9 +98,9 @@ export default function Nav() {
                Skill
             </Link>
             <Link
-               activeClass={`px-3 cursor-pointer ${memoizedColor}`}
+               activeClass={` ${memoizedColor}`}
                to="portfolio"
-               className={`px-3 cursor-pointer ${memoizedHoverColor}`}
+               className={`cursor-pointer px-3 ${memoizedHoverColor}`}
                spy={true}
                smooth={true}
                offset={50}
@@ -109,9 +109,9 @@ export default function Nav() {
                Portfolio
             </Link>
             <Link
-               activeClass={`px-3 cursor-pointer ${memoizedColor}`}
+               activeClass={` ${memoizedColor}`}
                to="contact"
-               className={`px-3 cursor-pointer ${memoizedHoverColor}`}
+               className={`cursor-pointer px-3 ${memoizedHoverColor}`}
                spy={true}
                smooth={true}
                offset={50}
@@ -122,11 +122,11 @@ export default function Nav() {
          </div>
       </nav>
    ) : (
-      <nav className="nav__mobile bg-white/40 backdrop-blur-md w-4/5 h-16 fixed bottom-6 left-1/2 -translate-y-1/2 -translate-x-1/2 rounded-2xl  flex justify-evenly my-auto items-center text-lg z-[100] dark:bg-slate-900/50 dark:text-slate-50">
+      <nav className="nav__mobile fixed bottom-6 left-1/2 z-[100] my-auto flex h-16 w-4/5 -translate-y-1/2 -translate-x-1/2  items-center justify-evenly rounded-2xl bg-white/40 text-lg backdrop-blur-md dark:bg-slate-900/50 dark:text-slate-50">
          <Link
-            activeClass={`px-3 cursor-pointer ${memoizedColor}`}
+            activeClass={` ${memoizedColor}`}
             to="home"
-            className={`px-3 cursor-pointer hover:${memoizedColor}`}
+            className={`cursor-pointer px-3 hover:${memoizedColor}`}
             spy={true}
             smooth={true}
             offset={50}
@@ -135,9 +135,9 @@ export default function Nav() {
             <HouseDoor></HouseDoor>
          </Link>
          <Link
-            activeClass={`px-3 cursor-pointer ${memoizedColor}`}
+            activeClass={` ${memoizedColor}`}
             to="about"
-            className={`px-3 cursor-pointer hover:${memoizedColor}`}
+            className={`cursor-pointer px-3 hover:${memoizedColor}`}
             spy={true}
             smooth={true}
             offset={50}
@@ -146,9 +146,9 @@ export default function Nav() {
             <Person></Person>
          </Link>
          <Link
-            activeClass={`px-3 cursor-pointer ${memoizedColor}`}
+            activeClass={` ${memoizedColor}`}
             to="skill"
-            className={`px-3 cursor-pointer hover:${memoizedColor}`}
+            className={`cursor-pointer px-3 hover:${memoizedColor}`}
             spy={true}
             smooth={true}
             offset={50}
@@ -157,9 +157,9 @@ export default function Nav() {
             <Motherboard></Motherboard>
          </Link>
          <Link
-            activeClass={`px-3 cursor-pointer ${memoizedColor}`}
+            activeClass={` ${memoizedColor}`}
             to="portfolio"
-            className={`px-3 cursor-pointer hover:${memoizedColor}`}
+            className={`cursor-pointer px-3 hover:${memoizedColor}`}
             spy={true}
             smooth={true}
             offset={50}
@@ -168,9 +168,9 @@ export default function Nav() {
             <Laptop></Laptop>
          </Link>
          <Link
-            activeClass={`px-3 cursor-pointer ${memoizedColor}`}
+            activeClass={` ${memoizedColor}`}
             to="contact"
-            className={`px-3 cursor-pointer hover:${memoizedColor}`}
+            className={`cursor-pointer px-3 hover:${memoizedColor}`}
             spy={true}
             smooth={true}
             offset={50}

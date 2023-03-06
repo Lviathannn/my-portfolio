@@ -1,24 +1,27 @@
 import React from "react";
 
-export default function CardList({ data }) {
+export default function CardList({ data, filter }) {
    return (
-      <div className="flex mt-5 flex-wrap gap-4 lg:gap-5 justify-center sm:w-4/5 mx-auto">
+      <div className="xl:px-18 mx-auto grid w-full grid-cols-2 gap-2 py-5 sm:grid-cols-3 sm:gap-5 xl:grid-cols-4">
          {data.map((item, index) => {
-            return (
-               <div
-                  className="w-32 lg:w-48 lg:h-60 h-40 bg-white dark:bg-slate-700 shadow-md flex flex-col justify-center items-center rounded-md skill__card"
-                  key={index}
-               >
-                  <img
-                     src={`/img/${item.logo}`}
-                     alt={item.title}
-                     className="w-20"
-                  />
-                  <h1 className="font-medium text-slate-500 mt-5 dark:text-slate-300">
-                     {item.title}
-                  </h1>
-               </div>
-            );
+            if (item.type === filter) {
+               return (
+                  <div
+                     className=" flex flex-col items-center justify-center rounded-md bg-slate-300/30 px-5 py-10 shadow-md dark:bg-slate-700/30 sm:py-14 md:py-20"
+                     key={index}
+                  >
+                     <img
+                        src={`/img/${item.logo}`}
+                        alt={item.title}
+                        className="h-20 w-20"
+                        loading="lazy"
+                     />
+                     <h1 className="mt-5 font-medium text-slate-500 dark:text-slate-300">
+                        {item.title}
+                     </h1>
+                  </div>
+               );
+            }
          })}
       </div>
    );

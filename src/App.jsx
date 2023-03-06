@@ -10,19 +10,20 @@ export default function App() {
    useEffect(() => {
       setTimeout(() => {
          setLoading(false);
-      }, 5000);
+      }, 3000);
    }, []);
 
-   return loading ? (
-      <div className="h-screen bg-slate-800 flex justify-center items-center">
-         <HashLoader
-            loading={loading}
-            size={50}
-            color="#6366f1"
-            aria-label="Loading Spinner"
-         />
-      </div>
-   ) : (
+   // return loading ? (
+   //    <div className="h-screen bg-slate-800 flex justify-center items-center">
+   //       <HashLoader
+   //          loading={loading}
+   //          size={50}
+   //          color="#6366f1"
+   //          aria-label="Loading Spinner"
+   //       />
+   //    </div>
+   // ) :
+   return (
       <>
          <Header />
          <Main />

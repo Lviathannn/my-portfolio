@@ -13,9 +13,7 @@
     "react-bootstrap-icons": "^1.9.1",
     "react-dom": "^18.2.0",
     "react-scroll": "^1.8.7",
-    "react-spinners": "^0.13.5",
-    "scrollreveal": "^4.0.9",
-    "swiper": "^8.4.2"
+    "react-spinners": "^0.13.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
@@ -23,6 +21,8 @@
     "@vitejs/plugin-react": "^2.1.0",
     "autoprefixer": "^10.4.12",
     "postcss": "^8.4.17",
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.3",
     "tailwindcss": "^3.1.8",
     "vite": "^3.1.0"
   }
