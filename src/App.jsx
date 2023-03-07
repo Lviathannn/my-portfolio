@@ -13,17 +13,16 @@ export default function App() {
       }, 3000);
    }, []);
 
-   // return loading ? (
-   //    <div className="h-screen bg-slate-800 flex justify-center items-center">
-   //       <HashLoader
-   //          loading={loading}
-   //          size={50}
-   //          color="#6366f1"
-   //          aria-label="Loading Spinner"
-   //       />
-   //    </div>
-   // ) :
-   return (
+   return loading ? (
+      <div className="flex h-screen items-center justify-center bg-slate-800">
+         <HashLoader
+            loading={loading}
+            size={50}
+            color="#6366f1"
+            aria-label="Loading Spinner"
+         />
+      </div>
+   ) : (
       <>
          <Header />
          <Main />
