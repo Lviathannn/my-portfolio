@@ -3,6 +3,8 @@ import { Link } from "react-scroll";
 import { Send, ArrowDownCircleFill } from "react-bootstrap-icons";
 import { useThemeContext } from "../context/ThemeContext";
 import Header from "./Header";
+import { motion } from "framer-motion";
+import { slideIn } from "../utils/motion";
 
 export default function Home() {
    const { color } = useThemeContext();
@@ -22,27 +24,13 @@ export default function Home() {
             : "hover:bg-rose-600",
       [color]
    );
-
-   const memoizedColor = useMemo(
-      () =>
-         color == "indigo"
-            ? "text-indigo-500"
-            : color == "blue"
-            ? "text-blue-500"
-            : color == "red"
-            ? "text-red-500"
-            : color == "cyan"
-            ? "text-cyan-500"
-            : color == "emerald"
-            ? "text-emerald-500"
-            : "text-rose-500",
-      [color]
-   );
-
    return (
       <section className="relative p-5 lg:px-16" id="home">
          <div className="relative z-50 flex h-screen flex-col items-center justify-center md:gap-5 lg:flex-row-reverse lg:gap-48">
-            <div
+            <motion.div
+               variants={slideIn("right", "tween", 0.5, 1.5)}
+               initial="hidden"
+               whileInView="show"
                className={`bg-${color}-500 blob h-80 w-80 overflow-hidden opacity-100 lg:h-[450px] lg:w-[450px]`}
             >
                <img
@@ -50,8 +38,13 @@ export default function Home() {
                   alt="Profile"
                   className="-mb-10 mt-5"
                />
-            </div>
-            <div className="home__caption mt-10  text-center text-slate-700 md:mt-0 md:text-left">
+            </motion.div>
+            <motion.div
+               variants={slideIn("left", "tween", 0.5, 1.5)}
+               initial="hidden"
+               whileInView="show"
+               className="home__caption mt-10  text-center text-slate-700 md:mt-0 md:text-left"
+            >
                <Header title1="Hi! I'm" title2="Asrul" />
                <h6 className="mt-1 text-xl font-normal text-slate-600 dark:text-slate-400">
                   Front-End Developer
@@ -69,7 +62,7 @@ export default function Home() {
                >
                   <Send></Send> <p>Contact Me</p>
                </a>
-            </div>
+            </motion.div>
             <Link
                spy={true}
                smooth={true}

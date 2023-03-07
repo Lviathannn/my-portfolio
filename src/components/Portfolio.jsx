@@ -3,6 +3,8 @@ import { portfolioData } from "../data/dummy";
 import { useThemeContext } from "../context/ThemeContext";
 import PortfolioCard from "./PortfolioCard";
 import Header from "./Header";
+import { motion } from "framer-motion";
+import { containerVariant, portfolioContainerVariant } from "../utils/motion";
 
 export default function Portfolio() {
    const { color } = useThemeContext();
@@ -28,7 +30,12 @@ export default function Portfolio() {
          id="portfolio"
       >
          <Header title1="My" title2="Portfolio" customClasses="text-center" />
-         <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+         <motion.div
+            variants={portfolioContainerVariant}
+            initial="hidden"
+            whileInView="show"
+            className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+         >
             {portfolioData.map((portfolio) => {
                return (
                   <PortfolioCard
@@ -40,7 +47,7 @@ export default function Portfolio() {
                   />
                );
             })}
-         </div>
+         </motion.div>
       </section>
    );
 }

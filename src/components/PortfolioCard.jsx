@@ -1,9 +1,12 @@
+import { motion } from "framer-motion";
 import { useMemo } from "react";
 import { Link } from "react-scroll";
 import { useThemeContext } from "../context/ThemeContext";
+import { portfolioVariant } from "../utils/motion";
 
 export default function PortfolioCard({ title, imgUrl, tools, link }) {
    const { color } = useThemeContext();
+
    const memoizedHoverColor = useMemo(
       () =>
          color == "indigo"
@@ -19,9 +22,11 @@ export default function PortfolioCard({ title, imgUrl, tools, link }) {
             : "hover:bg-rose-600",
       [color]
    );
-
    return (
-      <div className="bg w-full rounded-xl bg-slate-300/50 p-2 dark:bg-slate-700/50">
+      <motion.div
+         variants={portfolioVariant}
+         className="bg w-full rounded-xl bg-slate-300/50 p-2 dark:bg-slate-700/50"
+      >
          <img src={`/img/${imgUrl}`} alt={title} className=" rounded-md" />
          <div className="my-3 px-2 ">
             <h3 className={`font-semibold text-slate-700 dark:text-slate-300 `}>
@@ -62,6 +67,6 @@ export default function PortfolioCard({ title, imgUrl, tools, link }) {
                Demo
             </a>
          )}
-      </div>
+      </motion.div>
    );
 }

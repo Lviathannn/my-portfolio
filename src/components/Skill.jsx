@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useMemo, useState } from "react";
 import { useThemeContext } from "../context/ThemeContext";
 import { skillsData } from "../data/dummy";
@@ -7,19 +8,19 @@ import Header from "./Header";
 export default function Skill() {
    const [activeSkill, setActiveSkill] = useState("language");
    const { color } = useThemeContext();
-   const memoizedColor = useMemo(
+   const memoizedHoverColor = useMemo(
       () =>
          color == "indigo"
-            ? "text-indigo-500"
+            ? "hover:bg-indigo-500"
             : color == "blue"
-            ? "text-blue-500"
+            ? "hover:bg-blue-500"
             : color == "red"
-            ? "text-red-500"
+            ? "hover:bg-red-500"
             : color == "cyan"
-            ? "text-cyan-500"
+            ? "hover:bg-cyan-500"
             : color == "emerald"
-            ? "text-emerald-500"
-            : "text-rose-500",
+            ? "hover:bg-emerald-500"
+            : "hover:bg-rose-500",
       [color]
    );
 
@@ -30,7 +31,7 @@ export default function Skill() {
             <div className=" mt-10 flex justify-center">
                <div className="flex w-full max-w-full space-x-1 rounded-xl bg-slate-300/30 p-1 dark:bg-slate-700/30">
                   <button
-                     className={`w-full rounded-xl py-3 text-sm font-medium leading-5 dark:text-white  ${
+                     className={`w-full rounded-xl py-3 text-sm font-medium leading-5 dark:text-white ${memoizedHoverColor} ${
                         activeSkill == "language"
                            ? `bg-${color}-500 text-white`
                            : ` bg-transparent`
@@ -40,7 +41,7 @@ export default function Skill() {
                      Language
                   </button>
                   <button
-                     className={`w-full rounded-xl py-3 text-sm font-medium leading-5 dark:text-white  ${
+                     className={`w-full rounded-xl py-3 text-sm font-medium leading-5 dark:text-white ${memoizedHoverColor} ${
                         activeSkill == "library"
                            ? `bg-${color}-500 text-white`
                            : ` bg-transparent`
@@ -50,7 +51,7 @@ export default function Skill() {
                      Library
                   </button>
                   <button
-                     className={`w-full rounded-xl py-3 text-sm font-medium leading-5 dark:text-white  ${
+                     className={`w-full rounded-xl py-3 text-sm font-medium leading-5 ${memoizedHoverColor} dark:text-white ${
                         activeSkill == "tools"
                            ? `bg-${color}-500 text-white`
                            : ` bg-transparent`

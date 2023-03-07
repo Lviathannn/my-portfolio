@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import { MoonStars } from "react-bootstrap-icons";
 import { Link } from "react-scroll";
 import {
    Telephone,
@@ -8,10 +9,25 @@ import {
    Person,
 } from "react-bootstrap-icons";
 import { useThemeContext } from "../context/ThemeContext";
+import { motion } from "framer-motion";
+import { navVariants } from "../utils/motion";
 
 export default function Nav() {
    const [screenSize, setScreenSize] = useState(window.innerWidth);
    const { color } = useThemeContext();
+   const [dark, setDark] = useState(true);
+
+   const darkToogle = () => {
+      setDark(!dark);
+   };
+
+   useEffect(() => {
+      if (dark == false) {
+         document.body.className = "light";
+      } else {
+         document.body.className = "dark";
+      }
+   }, [dark]);
 
    useEffect(() => {
       const handleResize = () => {
@@ -57,13 +73,18 @@ export default function Nav() {
    );
 
    return screenSize >= 1024 ? (
-      <nav className="fixed top-0 z-[100] flex h-14  min-w-full justify-center bg-white/50 backdrop-blur-lg dark:bg-slate-800/50 sm:px-28">
+      <motion.nav
+         variants={navVariants}
+         initial="hidden"
+         whileInView="show"
+         className="fixed top-0 z-[100] flex h-14  min-w-full justify-center bg-white/50 backdrop-blur-lg dark:bg-slate-800/50 sm:px-28"
+      >
          <div className="container my-auto hidden sm:block">
-            <h1 className={`text-base font-semibold ${memoizedColor} my-auto`}>
+            <h1 className={`text-base ${memoizedColor} my-auto`}>
                Muhammad Asrul
             </h1>
          </div>
-         <div className="nav__menu container my-auto flex justify-center text-slate-500 dark:text-slate-50 sm:justify-end">
+         <div className="container my-auto flex justify-center text-slate-500 dark:text-slate-50 sm:justify-end">
             <Link
                activeClass={` ${memoizedColor}`}
                to="home"
@@ -120,7 +141,14 @@ export default function Nav() {
                Contact
             </Link>
          </div>
-      </nav>
+         <button
+            onClick={darkToogle}
+            className={`dark-icon absolute right-10 top-4 text-2xl lg:fixed text-${color}-500 z-[120]`}
+            id="dark-mode"
+         >
+            <MoonStars></MoonStars>
+         </button>
+      </motion.nav>
    ) : (
       <nav className="nav__mobile fixed bottom-6 left-1/2 z-[100] my-auto flex h-16 w-4/5 -translate-y-1/2 -translate-x-1/2  items-center justify-evenly rounded-2xl bg-white/40 text-lg backdrop-blur-md dark:bg-slate-900/50 dark:text-slate-50">
          <Link

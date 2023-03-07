@@ -1,7 +1,9 @@
+import { motion } from "framer-motion";
 import React, { useMemo } from "react";
 import { GeoAlt, Envelope, Telephone, Send } from "react-bootstrap-icons";
 import { useThemeContext } from "../context/ThemeContext";
 import Header from "./Header";
+import { slideIn } from "../utils/motion";
 
 export default function Contact() {
    const { color } = useThemeContext();
@@ -26,8 +28,13 @@ export default function Contact() {
       <section className="relative mt-32 mb-20" id="contact">
          <Header title1="Contact" title2="Me" customClasses="text-center" />
          <div className="mt-10 flex flex-col items-center justify-center gap-3 lg:flex-row lg:gap-10">
-            <div className=" contact__info flex w-11/12 flex-col items-center justify-center overflow-hidden rounded-xl bg-white p-10 py-10 shadow-md dark:bg-slate-700 sm:w-2/3 lg:w-2/6 lg:px-0 lg:py-10">
-               <div className="flex flex-col justify-center gap-5">
+            <motion.div
+               variants={slideIn("left", "tween", 0.5, 1)}
+               initial="hidden"
+               whileInView="show"
+               className=" contact__info flex w-11/12 flex-col items-center justify-center overflow-hidden rounded-xl bg-white p-10 py-10 shadow-md dark:bg-slate-700 sm:w-2/3 lg:w-2/6 lg:px-0 lg:py-10"
+            >
+               <motion.div className="flex flex-col justify-center gap-5">
                   <div className="flex gap-4">
                      <Telephone
                         className={`text-2xl md:text-4xl ${memoizedColor}`}
@@ -67,10 +74,13 @@ export default function Contact() {
                         </p>
                      </div>
                   </div>
-               </div>
-            </div>
+               </motion.div>
+            </motion.div>
 
-            <form
+            <motion.form
+               variants={slideIn("right", "tween", 0.5, 1)}
+               initial="hidden"
+               whileInView="show"
                action="https://formspree.io/f/xoqbjzeo"
                method="POST"
                className="contact__form mt-10 flex w-3/4 flex-col items-center justify-center gap-3 rounded-xl bg-white p-7 py-10 shadow-md dark:bg-slate-700 md:mt-5 lg:w-1/3"
@@ -120,7 +130,7 @@ export default function Contact() {
                >
                   <p>Send</p> <Send className=" ml-1"></Send>
                </button>
-            </form>
+            </motion.form>
          </div>
       </section>
    );
