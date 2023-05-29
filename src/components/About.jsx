@@ -33,7 +33,7 @@ export default function About() {
                whileInView="show"
                className={`bg-${color}-500 w-72 overflow-hidden rounded-xl lg:w-[450px]`}
             >
-               <img src="/img/profile2.png" alt="Profile2" />
+               <img src="/img/profile2.webp" alt="Profile2" />
             </motion.div>
             <motion.div
                variants={slideIn("right", "tween", 0.5, 1.5)}

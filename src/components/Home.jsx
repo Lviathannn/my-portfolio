@@ -34,7 +34,7 @@ export default function Home() {
                className={`bg-${color}-500 blob h-80 w-80 overflow-hidden opacity-100 lg:h-[450px] lg:w-[450px]`}
             >
                <img
-                  src="/img/profile.png"
+                  src="/img/profile.webp"
                   alt="Profile"
                   className="-mb-10 mt-5"
                />
